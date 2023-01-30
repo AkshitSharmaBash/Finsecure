@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_literals_to_create_immutables
 
 import 'package:finsecure/screens/initialaccountsetup.dart';
+import 'package:finsecure/screens/timeline.dart';
 import 'package:flutter/material.dart';
 import 'splash_screen.dart';
 

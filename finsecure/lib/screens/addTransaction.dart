@@ -1,9 +1,17 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'dart:js';
+
+import 'package:finsecure/screens/categories.dart';
 import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+      initialRoute: "/",
+      routes: {
+        "/":(context)=>MyWidget() ,
+        "/options":(context)=>Categories()
+      },
       debugShowCheckedModeBanner: false, home: Scaffold(body: MyWidget())));
 }
 
@@ -97,7 +105,9 @@ class _MyWidgetState extends State<MyWidget> {
             backgroundColor: MaterialStateProperty.all(Colors.grey),
 
           ),
-          onPressed: (){}, 
+          onPressed: (
+           
+          ){ Navigator.push(context,);}, 
         child: Text("Select a Category"))
         
       ],
