@@ -5,13 +5,15 @@ import 'dart:js';
 import 'package:finsecure/screens/categories.dart';
 import 'package:flutter/material.dart';
 
+import '../widget/transaction.dart';
+
 void main() {
   runApp(MaterialApp(
-      initialRoute: "/",
-      routes: {
-        "/":(context)=>MyWidget() ,
-        "/options":(context)=>Categories()
-      },
+      // initialRoute: "/",
+      // routes: {
+      //   "/":(context)=>MyWidget() ,
+      //   "/options":(context)=>Categories()
+      // },
       debugShowCheckedModeBanner: false, home: Scaffold(body: MyWidget())));
 }
 
@@ -56,7 +58,7 @@ class _MyWidgetState extends State<MyWidget> {
                     )
                   ]),
                 ),
-                Row(
+                Row(       
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
@@ -77,28 +79,23 @@ class _MyWidgetState extends State<MyWidget> {
                                   fontSize: 30,
                                   fontWeight: FontWeight.w700),
                             )),
-                        onTap: () {})
+                        onTap: () {
+                          
+                        })
                   ],
                 )
               ],
-            )),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Row(children: [
-            Icon(Icons.wallet, color: Color(0xFF12BF88)),
-            Text("Account")
-          ]),
-          Text("Wallet")
-        ]),
-        Row(mainAxisAlignment: MainAxisAlignment.spaceBetween, children: [
-          Row(children: [
-            Icon(Icons.calendar_today, color: Color(0xFF12BF88)),
-            Text(date)
-          ], ),
-          Text("Choose Date >")
-        ]),
-         
+            )),  
+
+          //   Rows of Transaction Wiget     
+       TransactionWidget(Icons.wallet, "Account","Wallet"),         // Account
+        TransactionWidget(Icons.calendar_today,"Today","Choose Date >"),              // Date Picker   
+
             TextField(),
           
+          TransactionWidget(Icons.edit, "Transaction Category", ">"),        // Transaction Category 
+          TransactionWidget(Icons.repeat,"Recurrence",">") // Reccurence   
+          , 
         ElevatedButton(
           style: ButtonStyle(
           
@@ -107,7 +104,7 @@ class _MyWidgetState extends State<MyWidget> {
           ),
           onPressed: (
            
-          ){ Navigator.push(context,);}, 
+          ){ }, 
         child: Text("Select a Category"))
         
       ],
