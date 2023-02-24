@@ -53,18 +53,20 @@ class Categories extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(child:Column(
-      children: [
-        Container(
-            height: 50,
-            color: Color(0xFFF1F3F7),
-            child: Center(
-                child: Text(
-              "ALL CATEGORIES",
-              style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w500),
-            ))),
-        ...expenses
-      ],
-    ));
+    return Scaffold(
+      body: SingleChildScrollView(child:Column(
+        children: [
+          Container(
+              height: 50,
+              color: Color(0xFFF1F3F7),
+              child: Center(
+                  child: Text(
+                "ALL CATEGORIES",
+                style: TextStyle(color: Colors.grey[800], fontWeight: FontWeight.w500),
+              ))),
+          ...expenses
+        ],
+      )),
+    );
   }
 }
